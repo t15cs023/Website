@@ -36,11 +36,11 @@ public class NewMember extends HttpServlet {
 				Member membr = new Member(name, first, last, pass, 1);
 				pm.makePersistent(membr);
 				/* 登録を成功したことをresultに書き込む */
-				result = "Success!";
+				result = "登録が成功しました!";
 			}
 			else {
 				/* 登録を失敗した原因をresultに書き込む */
-				result = "Username has been taken. Please try again.";
+				result = "ほかのユーザー名でもう一度試してください.";
 			}
 		} finally {
 			pm.close();

@@ -35,11 +35,8 @@ body, html {
 
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active"><a class="nav-link" href="/mainPage">Home
-					<span class="sr-only">(current)</span>
-			</a></li>
 		</ul>
-		<div class="nav-item" style="color: white;">Welcome ${first}</div>
+		<div class="nav-item" style="color: white;">こんにちは ${first}</div>
 		<ul class="navbar-nav navbar-right">
 			<li class="nav-item dropdown">
 			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> アカウント </a>
@@ -47,7 +44,7 @@ body, html {
 					<a class="dropdown-item" href="#">カート</a> <a class="dropdown-item" href="#">注文履歴</a>
 					<div class="dropdown-divider"></div>
 					<form action="/logout">
-						<button id="logout" type="submit" value="Logout" class="dropdown-item">Logout</button>
+						<button id="logout" type="submit" value="Logout" class="dropdown-item">ログアウト</button>
 					</form>
 				</div>
 			</li>

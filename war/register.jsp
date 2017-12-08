@@ -92,13 +92,13 @@ body, html {
 	<div class="container">
 		<div class="card card-container">
 			<form action="/newMember" class="form-signin " method="post">
-				<input type="text" id="inputUsername" class="form-control" placeholder="Username" name="username" autofocus> 
-				<input type="text" id="inputFirst" class="form-control" placeholder="First Name" name="first"> 
-				<input type="text" id="inputLast" class="form-control" placeholder="Last Name" name="last"> 
-				<input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password">
-				<input type="password" id="inputCPassword" class="form-control" placeholder="Confirm Password" name="cpassword">
+				<input type="text" id="inputUsername" class="form-control" placeholder="ユーザー名" name="username" autofocus> 
+				<input type="text" id="inputFirst" class="form-control" placeholder="名前" name="first"> 
+				<input type="text" id="inputLast" class="form-control" placeholder="苗字" name="last"> 
+				<input type="password" id="inputPassword" class="form-control" placeholder="パスワード" name="password">
+				<input type="password" id="inputCPassword" class="form-control" placeholder="パスワード" name="cpassword">
 				<p id="validate-status" style="color: red;"></p>
-				<button class="btn btn-lg btn-primary btn-block btn-signin " id="submit" type="submit" disabled="true">Register</button>
+				<button class="btn btn-lg btn-primary btn-block btn-signin " id="submit" type="submit" disabled="true">新規登録</button>
 			</form>
 		</div>
 	</div>

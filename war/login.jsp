@@ -105,16 +105,14 @@ body, html {
 					if (res != null)
 						out.print(res + "\n");
 				%>
-				<input type="text" id="inputUsername" class="form-control"
-					placeholder="Username" name="uname" autofocus> <input
-					type="password" id="inputPassword" class="form-control"
-					placeholder="Password" name="pass">
+				<input type="text" id="inputUsername" class="form-control" placeholder="ユーザー名" name="uname" autofocus> <input
+					type="password" id="inputPassword" class="form-control" placeholder="パスワード" name="pass">
 				<button class="btn btn-lg btn-primary btn-block btn-signin"
-					type="submit">Sign in</button>
+					type="submit">ログイン</button>
 			</form>
 			<form action="/register">
 				<button class="btn btn-lg btn-primary btn-block btn-signin"
-					type="submit">Register</button>
+					type="submit">新規登録</button>
 			</form>
 		</div>
 	</div>
