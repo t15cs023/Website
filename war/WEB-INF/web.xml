@@ -6,7 +6,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <servlet>
 	<servlet-name>login</servlet-name>
-	<servlet-class>login.Login</servlet-class>
+	<servlet-class>util.Login</servlet-class>
   </servlet>
   <servlet-mapping>
 	<servlet-name>login</servlet-name>
@@ -14,7 +14,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   </servlet-mapping>
     <servlet>
 	<servlet-name>newMember</servlet-name>
-	<servlet-class>login.NewMember</servlet-class>
+	<servlet-class>util.NewMember</servlet-class>
   </servlet>
   <servlet-mapping>
 	<servlet-name>newMember</servlet-name>
@@ -27,6 +27,22 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <servlet-mapping>
 	<servlet-name>mainPage</servlet-name>
 	<url-pattern>/mainPage</url-pattern>
+  </servlet-mapping>
+  <servlet>
+	<servlet-name>breadPage</servlet-name>
+	<jsp-file>/breadpage.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>breadPage</servlet-name>
+	<url-pattern>/breadPage</url-pattern>
+  </servlet-mapping>
+    <servlet>
+  <servlet-name>adminPage</servlet-name>
+	<jsp-file>/adminpage.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>adminPage</servlet-name>
+	<url-pattern>/adminPage</url-pattern>
   </servlet-mapping>
   <servlet>
 	<servlet-name>results</servlet-name>
@@ -46,7 +62,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   </servlet-mapping>
     <servlet>
 	<servlet-name>logout</servlet-name>
-	<servlet-class>login.Logout</servlet-class>
+	<servlet-class>util.Logout</servlet-class>
   </servlet>
   <servlet-mapping>
 	<servlet-name>logout</servlet-name>

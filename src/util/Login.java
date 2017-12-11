@@ -1,4 +1,4 @@
-package login;
+package util;
 
 import java.io.IOException;
 import java.util.List;
@@ -44,25 +44,42 @@ public class Login  extends HttpServlet{
     		/* ログインする度にまだチェックアウトされていないかを確認する
     		 * チェックアウトされていないカートがなければ、新しく生成する
     		 */ 
-    		query = pm.newQuery(Cart.class);
-    		query.setFilter("uid == findUID");
-    		query.declareParameters("Long findUID");
-    		List<Cart> carts = (List<Cart>)query.execute(uid);
-    		for(int i = 0; i < carts.size(); i++) {
-    			Cart c = carts.get(i);
-    			if(c.getCheckedOut())
-    				carts.remove(i);
-    		}
-    		if(carts.size() == 0) {
-    			Cart c = new Cart(uid);
-    			pm.makePersistent(c);
+    		if(mem.getUsertype() == 1) {
+	    		query = pm.newQuery(Cart.class);
+	    		query.setFilter("uid == findUID");
+	    		query.declareParameters("Long findUID");
+	    		List<Cart> carts = (List<Cart>)query.execute(uid);
+	    		for(int i = 0; i < carts.size(); i++) {
+	    			Cart c = carts.get(i);
+	    			if(c.getCheckedOut())
+	    				carts.remove(i);
+	    		}
+	    		if(carts.size() == 0) {
+	    			Cart c = new Cart(uid);
+	    			pm.makePersistent(c);
+	    		}
     		}
     		pm.close();
     		//sessionの中身に変数的なものを生成し、それにユーザー名と名前を保存する(後で必要なので)
     		session.setAttribute("first", mem.getFirstname());
     		session.setAttribute("username", uname);
-    		//ログイン成功したため、メインページに遷移して良い
-    		resp.sendRedirect("/mainPage");
+    		session.setAttribute("usertype", mem.getUsertype());
+    		/*
+    		 * ページの遷移先を決める
+    		 */
+    		switch(mem.getUsertype()) {
+    		case 0:
+    			resp.sendRedirect("/adminPage");
+    			break;
+    		case 1:
+    			resp.sendRedirect("/mainPage");
+    			break;
+    		case 2:
+    			resp.sendRedirect("/breadPage");
+    			break;
+    		default:
+    			resp.sendRedirect("/mainPage");
+    		}
     	}
     	else {
     		//認証失敗したため、エラーメッセージを先程生成したmsgに保存し、msgとする

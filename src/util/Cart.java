@@ -1,4 +1,4 @@
-package login;
+package util;
 
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.IdentityType;
