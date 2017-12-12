@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ page import="util.PMF" %>
+<%@ page import="util.Bread" %>
+<%@ page import="javax.jdo.PersistenceManager" %>
+<%@ page import="javax.jdo.Query" %>
+<%@ page import="java.text.MessageFormat" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -49,7 +55,7 @@ body {
 		}
 	%>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <a
-		class="navbar-brand" href="/breadPage">パン屋トップ</a>
+		class="navbar-brand" href="/mainPage">パン屋トップ</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
@@ -80,14 +86,59 @@ body {
 	</div>
 	</nav>
 	
+	<!-- Contents -->
 	<div class="container">
-    <div class="jumbotron">
-      <h3>パンリスト編集</h3>
-      <a href="/addbread" id="selection">パンを追加</a><br>
-      <a href="#" id="selection">パンを消去</a><br>
-      <a href="/listBread" id="selection">パンリスト一覧・表示非表示・編集</a>
-    </div>
-  </div>
+		<form action="/deleteBread" method="post">
+  		<table class="table table-dark">
+      	<thead>
+        	<tr>
+          	<th scope="col">#</th>
+          	<th scope="col">商品名</th>
+          	<th scope="col">料金</th>
+          	<th scope="col">説明文</th>
+          	<th scope="col">消去</th>
+        	</tr>
+      	</thead>
+      	<tbody>
+      	<%!
+      	private void myFunc(List<Bread> b, javax.servlet.jsp.JspWriter myOut)
+      	{  
+      	  try{ 
+      		  for(int i = 0; i < b.size(); i++) {
+      			  myOut.println("<tr>");
+      			  myOut.println("<th scope=\"row\">" + (i+1) + "</th>");
+      			  myOut.println("<td>"+b.get(i).getProductName()+"</td>");
+      			  myOut.println("<td>"+b.get(i).getValue()+"</td>");
+      			  myOut.println("<td>"+b.get(i).getDescription()+"</td>");
+      			  myOut.println("<td><input type=\"checkbox\" name=\""+b.get(i).getId()+"\" />&nbsp;</td>");
+      			  myOut.println("</tr>");
+      		  }
+      	  } 
+      	  catch(Exception eek) {
+      		  
+      	  }
+      	}
+		%>
+		<%
+		PersistenceManager pm = null;
+		try {
+    		pm = PMF.get().getPersistenceManager();
+    		Query query = pm.newQuery(Bread.class);
+    		List<Bread> bread = (List<Bread>) query.execute();
+    		myFunc(bread, out);
+        	}
+			finally {
+    			if (pm != null && !pm.isClosed())
+       			pm.close();
+			}
+		%>
+      	</tbody>
+    	</table>
+		<button class="btn btn-lg btn-primary btn-block" type="submit">消去する</button>
+    	</form>
+  	</div>
+  	<!-- ContentsEnd -->
+	
 	<!-- ユーザーがより快適にページを閲覧できるようにスクリプトに関係するものをできるだけここで書く -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script

@@ -37,7 +37,7 @@ body {
 		//ログアウト後に戻る操作が出来ないようにする
 		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 		//ログインせずにメインページを表示させないようにする
-		if(session.getAttribute("username")==null) {
+		if(session.getAttribute("username")==null || !session.getAttribute("usertype").equals(1)) {
 			//ログインしていなければ、ログイン画面に戻す
 			response.sendRedirect("/");
 		}

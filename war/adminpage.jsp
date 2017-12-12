@@ -14,7 +14,7 @@
 <%
 response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 
-if(!session.getAttribute("username").equals("admin")) {
+if(session.getAttribute("username")==null || !session.getAttribute("usertype").equals(0)) {
 	response.sendRedirect("/");
 }
 %>

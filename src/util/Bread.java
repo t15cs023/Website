@@ -41,7 +41,7 @@ public class Bread {
 		return productname;
 	}
 	
-	public String getDiscription(){
+	public String getDescription(){
 		return description;
 	}
 	

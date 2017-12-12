@@ -92,6 +92,10 @@ body, html {
 	HttpSession sessions = request.getSession();
 	if(sessions.getAttribute("first") != null)
 		response.sendRedirect("/mainPage");
+	if(sessions.getAttribute("first") != null && session.getAttribute("usertype").equals(2))
+		response.sendRedirect("/breadPage");
+	if(sessions.getAttribute("first") != null && session.getAttribute("usertype").equals(0))
+		response.sendRedirect("/adminPage");
 %>
 <body>
 
