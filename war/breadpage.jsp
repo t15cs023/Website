@@ -48,6 +48,7 @@ body {
 			response.sendRedirect("/");
 		}
 	%>
+	<!-- ここからnavbar -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <a
 		class="navbar-brand" href="/breadPage">パン屋トップ</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -79,15 +80,19 @@ body {
 		</ul>
 	</div>
 	</nav>
+	<!-- ここまでnavbar -->
 	
+	<!-- ここからコンテンツを表示 -->
 	<div class="container">
-    <div class="jumbotron">
-      <h3>パンリスト編集</h3>
-      <a href="/addbread" id="selection">パンを追加</a><br>
-      <a href="#" id="selection">パンを消去</a><br>
-      <a href="/listBread" id="selection">パンリスト一覧・表示非表示・編集</a>
-    </div>
-  </div>
+	    <div class="jumbotron">
+	      <h3>パンリスト編集</h3>
+	      <a href="/addbread" id="selection">パンを追加</a><br>
+	      <a href="#" id="selection">パンを消去</a><br>
+	      <a href="/listBread" id="selection">パンリスト一覧・表示非表示・編集</a>
+	    </div>
+  	</div>
+  	<!-- ここまでコンテンツを表示 -->
+  	
 	<!-- ユーザーがより快適にページを閲覧できるようにスクリプトに関係するものをできるだけここで書く -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script

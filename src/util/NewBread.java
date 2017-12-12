@@ -17,7 +17,7 @@ public class NewBread extends HttpServlet {
 			throws IOException {
 		/* 登録プロセスが通ったかを保存する */
 		String result = "";
-		/* 以下4行はそれぞれユーザー名、名前、苗字、パスワードを仮変数として保存しておく */
+		/* 以下4行はそれぞれ商品名、説明文、短歌、カテゴリーを仮変数として保存しておく */
 		String productname = req.getParameter("productname");
 		String desc = req.getParameter("desc");
 		int price = Integer.parseInt(req.getParameter("price"));
@@ -35,9 +35,9 @@ public class NewBread extends HttpServlet {
 		/* DBを持って来る */
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		try {
-			/* ユーザー名はもう存在していないかを確認する */
+			/* 商品名は存在していないかを確認する */
 			if(checkExists(productname)) {
-				/* 存在していなければ、新しいMemberを生成し、Memberのentityにレコードを追加する */
+				/* 存在していなければ、新しいBreadを生成し、Breadのentityにレコードを追加する */
 				Bread bread = new Bread(productname, desc, category, price);
 				pm.makePersistent(bread);
 				/* 登録を成功したことをresultに書き込む */
@@ -51,9 +51,9 @@ public class NewBread extends HttpServlet {
 			pm.close();
 		}
 
-		/* 結果をresults.jspで使うから、resultをstylesとしてrequestに保存する */
+		/* 結果をresultsbread.jspで使うから、resultをstylesとしてrequestに保存する */
 		req.setAttribute("styles", result);
-		/* stylesをresults.jspにおくるために、以下の2行が必要 */
+		/* stylesをresultsbread.jspにおくるために、以下の2行が必要 */
 		RequestDispatcher view = req.getRequestDispatcher("/resultsbread");
 		try {
 			view.forward(req, resp);
@@ -64,8 +64,8 @@ public class NewBread extends HttpServlet {
 	}
 	
 	/**
-	 * ユーザー名をすでに存在しているか確認する関数
-	 * @param name ユーザーが入力したユーザー名
+	 * 商品名をすでに存在しているか確認する関数
+	 * @param name パン屋が入力した商品名
 	 * @return 結果 存在する-false 存在しない-true 
 	 */
 	private boolean checkExists(String name) {
