@@ -4,16 +4,37 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>パン屋トップ</title>
+<title>パン屋編集ページ</title>
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 <style>
-body, html {
-	height: 100%;
+a {
+  color:grey;
 }
-
+.navbar {
+  margin-bottom: 20px;
+}
+.nav-tabs>li>a.active,
+.nav-tabs>li>a:hover,
+.nav-tabs>li>a:focus {
+  color:black;
+}
+body {
+  position: relative;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Set the fixed height of the footer here */
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #f5f5f5;
+}
 #logout:active:focus {
 	color: #ffffff;
 	background-color: #000000;
+}
+#selection:hover {
+  color:black
 }
 </style>
 </head>
@@ -58,6 +79,15 @@ body, html {
 		</ul>
 	</div>
 	</nav>
+	
+	<div class="container">
+    <div class="jumbotron">
+      <h3>パンリスト編集</h3>
+      <a href="/addbread" id="selection">パンを追加</a><br>
+      <a href="#" id="selection">パンを消去</a><br>
+      <a href="#" id="selection">パンリスト一覧・表示非表示・編集</a>
+    </div>
+  </div>
 	<!-- ユーザーがより快適にページを閲覧できるようにスクリプトに関係するものをできるだけここで書く -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script

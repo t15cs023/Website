@@ -7,10 +7,25 @@
 <title>パン注文サイト</title>
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 <style>
-body, html {
-	height: 100%;
+a {
+  color:grey;
 }
-
+.nav-tabs>li>a.active,
+.nav-tabs>li>a:hover,
+.nav-tabs>li>a:focus {
+  color:black;
+}
+body {
+  position: relative;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Set the fixed height of the footer here */
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #f5f5f5;
+}
 #logout:active:focus {
 	color: #ffffff;
 	background-color: #000000;
@@ -63,11 +78,43 @@ body, html {
 	</ul>
 
 	<!-- Tab panes -->
-	<div class="tab-content">
-		<div class="tab-pane active" id="souzai" role="tabpanel">...</div>
-		<div class="tab-pane" id="kashi" role="tabpanel">...</div>
-		<div class="tab-pane" id="shoku" role="tabpanel">...</div>
-	</div>
+  <div class="tab-content">
+    <div class="tab-pane active" id="souzai" role="tabpanel">
+      <div class="container-fluid">
+        <!-- rows and contents should be dynamic in order to be compatible with n numbers of bread in a said category -->
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <p>Lorem ipsum dolor sit amet, propriae apeirian scriptorem ei has. Malorum nominavi luptatum at est, eam ex causae gloriatur. Nulla consul periculis cu eam, pro cu simul contentiones. Ius no solum scribentur. Te velit quaerendum quo, sit autem intellegam conclusionemque eu, aliquid iudicabit has ex. Vis cu cibo movet dolorem. In noster impedit per.</p>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <p>Lorem ipsum dolor sit amet, propriae apeirian scriptorem ei has. Malorum nominavi luptatum at est, eam ex causae gloriatur. Nulla consul periculis cu eam, pro cu simul contentiones. Ius no solum scribentur. Te velit quaerendum quo, sit autem intellegam conclusionemque eu, aliquid iudicabit has ex. Vis cu cibo movet dolorem. In noster impedit per.</p>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <p>Lorem ipsum dolor sit amet, propriae apeirian scriptorem ei has. Malorum nominavi luptatum at est, eam ex causae gloriatur. Nulla consul periculis cu eam, pro cu simul contentiones. Ius no solum scribentur. Te velit quaerendum quo, sit autem intellegam conclusionemque eu, aliquid iudicabit has ex. Vis cu cibo movet dolorem. In noster impedit per.</p>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <p>Lorem ipsum dolor sit amet, propriae apeirian scriptorem ei has. Malorum nominavi luptatum at est, eam ex causae gloriatur. Nulla consul periculis cu eam, pro cu simul contentiones. Ius no solum scribentur. Te velit quaerendum quo, sit autem intellegam conclusionemque eu, aliquid iudicabit has ex. Vis cu cibo movet dolorem. In noster impedit per.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <p>Lorem ipsum dolor sit amet, propriae apeirian scriptorem ei has. Malorum nominavi luptatum at est, eam ex causae gloriatur. Nulla consul periculis cu eam, pro cu simul contentiones. Ius no solum scribentur. Te velit quaerendum quo, sit autem intellegam conclusionemque eu, aliquid iudicabit has ex. Vis cu cibo movet dolorem. In noster impedit per.</p>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <p>Lorem ipsum dolor sit amet, propriae apeirian scriptorem ei has. Malorum nominavi luptatum at est, eam ex causae gloriatur. Nulla consul periculis cu eam, pro cu simul contentiones. Ius no solum scribentur. Te velit quaerendum quo, sit autem intellegam conclusionemque eu, aliquid iudicabit has ex. Vis cu cibo movet dolorem. In noster impedit per.</p>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <p>Lorem ipsum dolor sit amet, propriae apeirian scriptorem ei has. Malorum nominavi luptatum at est, eam ex causae gloriatur. Nulla consul periculis cu eam, pro cu simul contentiones. Ius no solum scribentur. Te velit quaerendum quo, sit autem intellegam conclusionemque eu, aliquid iudicabit has ex. Vis cu cibo movet dolorem. In noster impedit per.</p>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <p>Lorem ipsum dolor sit amet, propriae apeirian scriptorem ei has. Malorum nominavi luptatum at est, eam ex causae gloriatur. Nulla consul periculis cu eam, pro cu simul contentiones. Ius no solum scribentur. Te velit quaerendum quo, sit autem intellegam conclusionemque eu, aliquid iudicabit has ex. Vis cu cibo movet dolorem. In noster impedit per.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane" id="kashi" role="tabpanel">b</div>
+    <div class="tab-pane" id="shoku" role="tabpanel">c</div>
+  </div>
 	<!-- NavTabEnd -->
 
 	<!-- ユーザーがより快適にページを閲覧できるようにスクリプトに関係するものをできるだけここで書く -->
