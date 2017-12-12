@@ -26,10 +26,9 @@ public class Bread {
 	@Persistent
 	private int value;
 	
-	public Bread(Long id, String productname, String discription, int category, int value){
-		this.id = id;
+	public Bread(String productname, String description, int category, int value){
 		this.productname = productname;
-		this.description = discription;
+		this.description = description;
 		this.category = category;
 		this.value = value;
 	}

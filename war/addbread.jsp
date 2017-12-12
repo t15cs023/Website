@@ -71,20 +71,16 @@ body {
 		</ul>
 		<div class="nav-item" style="color: white;">こんにちは ${first}</div>
 		<ul class="navbar-nav navbar-right">
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> アカウント </a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdown"
-					style="left: -50%;">
-					<a class="dropdown-item" href="#">カート</a> <a class="dropdown-item"
-						href="#">注文履歴</a>
+			<li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> アカウント </a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown" style="left: -50%;">
+					<a class="dropdown-item" href="#">カート</a> <a class="dropdown-item" href="#">注文履歴</a>
 					<div class="dropdown-divider"></div>
 					<form action="/logout">
-						<button id="logout" type="submit" value="Logout"
-							class="dropdown-item">ログアウト</button>
+						<button id="logout" type="submit" value="Logout" class="dropdown-item">ログアウト</button>
 					</form>
-				</div></li>
+				</div>
+			</li>
 		</ul>
 	</div>
 	</nav>
@@ -93,7 +89,7 @@ body {
 	<!-- Contents -->
 	<div class="container">
 		<div class="card">
-			<form action="/NewBread" id="breadform" method="post">
+			<form action="/newBread" id="breadform" method="post">
 				<h3>パンを追加する</h3>
 				<div class="form-group">
 					<label for="productname">パンの名前を入力してください</label> 
