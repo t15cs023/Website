@@ -8,6 +8,9 @@ import javax.jdo.Query;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
+import entity.Cart;
+import entity.Member;
+
 /**
  * login servlet
  * @author t15cs023
