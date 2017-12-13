@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@ page import="util.PMF"%>
-<%@ page import="util.Bread"%>
+<%@ page import="entity.Bread"%>
 <%@ page import="javax.jdo.PersistenceManager"%>
 <%@ page import="javax.jdo.Query"%>
 <%@ page import="java.text.MessageFormat"%>
@@ -86,7 +86,8 @@ body {
 		<li class="nav-item"><a class="nav-link" data-toggle="tab"
 			href="#shoku" role="tab">食パン</a></li>
 	</ul>
-	<%!private void printBread(List<Bread> b, javax.servlet.jsp.JspWriter out) {
+	<%!
+	private void printBread(List<Bread> b, javax.servlet.jsp.JspWriter out) {
 		try {
 			out.println("<div class=\"container-fluid\">");
 			int i = 0;

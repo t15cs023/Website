@@ -1,4 +1,4 @@
-package util;
+package entity;
 
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.IdentityType;

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ page import="util.PMF" %>
-<%@ page import="util.Bread" %>
+<%@ page import="entity.Bread" %>
 <%@ page import="javax.jdo.PersistenceManager" %>
 <%@ page import="javax.jdo.Query" %>
 <%@ page import="java.text.MessageFormat" %>
