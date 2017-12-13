@@ -28,10 +28,12 @@ public class NewBread extends HttpServlet {
 		else if(req.getParameter("genre").equals("菓子パン")) {
 			category = 1;
 		}
-		else if(req.getParameter("genre").equals("食パン")) {
+		else if(req.getParameter("genre").equals("調理パン")) {
 			category = 2;
 		}
-		
+		else if(req.getParameter("genre").equals("食パン")) {
+			category = 3;
+		}
 		/* DBを持って来る */
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		try {

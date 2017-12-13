@@ -104,6 +104,7 @@ body {
 					<select class="form-control" name="genre" id="genre">
 						<option>惣菜パン</option>
 						<option>菓子パン</option>
+						<option>調理パン</option>
 						<option>食パン</option>
 					</select>
 				</div>
