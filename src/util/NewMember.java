@@ -9,6 +9,8 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
+import entity.Member;
+
 /**
  * 新規登録のためのservlet
  * @author t15cs023
