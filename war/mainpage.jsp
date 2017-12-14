@@ -98,6 +98,13 @@ body {
 					out.println("<div class=\"col-lg-3 col-md-6 col-sm-12\">");
 					out.println("<p>" + b.get(i).getProductName() + "</p>");
 					out.println("<p>" + b.get(i).getDescription() + "</p>");
+					if(b.get(i).getImage() != null) {
+						out.println("<p>" + "theres something" + "</p>");
+						out.println("<img src=\"/image/"+ b.get(i).getImage().getKeyAsString() +"\">");
+					}
+					else {
+						out.println("<p>" + "theres nothing" + "</p>");
+					}
 					out.println("<p>" + b.get(i).getValue() + "</p>");
 					out.println("</div>");
 				}

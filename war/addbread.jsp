@@ -86,7 +86,7 @@ body {
 	<!-- Contents -->
 	<div class="container">
 		<div class="card">
-			<form action="/newBread" id="breadform" method="post">
+			<form action="/newBread" id="breadform" method="post" enctype="multipart/form-data">
 				<h3>パンを追加する</h3>
 				<div class="form-group">
 					<label for="productname">パンの名前を入力してください</label> 
@@ -109,6 +109,7 @@ body {
 					<label for="desc">説明文を入力してください (200字)</label>
 					<textarea class="form-control" name="desc" id="desc" rows="3"></textarea>
 				</div>
+				<input type="file" name="upfile0" >
 				<button type="submit" class="btn btn-primary">Submit</button>
 			</form>
 		</div>

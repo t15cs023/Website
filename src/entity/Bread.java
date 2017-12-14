@@ -6,6 +6,8 @@ import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
+import imageutil.ImageEntity;
+
 /**
  * Breadクラス
  * @author t15cs028
@@ -35,6 +37,9 @@ public class Bread {
 	//単価
 	@Persistent
 	private int value;
+	
+	@Persistent
+	private ImageEntity image;
 	
 	/**
 	 * Breadクラスのコンストラクタ
@@ -90,5 +95,12 @@ public class Bread {
 		return value;
 	}
 	
+	public ImageEntity getImage() {
+		return image;
+	}
+	
+	public void setImage(ImageEntity image) {
+		this.image = image;
+	}
 	/** 商品を編集するときに、setterを追加する必要があるかもしれない */
 }
