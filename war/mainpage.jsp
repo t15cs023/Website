@@ -17,12 +17,20 @@ a {
 	color: grey;
 }
 
-.nav-tabs>li>a.active, .nav-tabs>li>a:hover, .nav-tabs>li>a:focus {
-	color: black;
-}
-
 body {
 	position: relative;
+}
+
+img {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.nav-tabs>li>a.active, .nav-tabs>li>a:hover, .nav-tabs>li>a:focus {
+	color: black;
 }
 
 .footer {
@@ -32,6 +40,30 @@ body {
 	height: 60px; /* Set the fixed height of the footer here */
 	line-height: 60px; /* Vertically center the text there */
 	background-color: #f5f5f5;
+}
+
+.tab-content {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.card {
+	margin-top: 5px;
+	margin-bottom: 15px;
+}
+
+.pdesc {
+	line-height: 2px;
+}
+
+.ctn {
+	height: 100px;
+	width: auto;
+}
+
+.ctn-child .button{
+	position: absolute;
+	bottom: 0;
 }
 
 #logout:active:focus {
@@ -96,16 +128,20 @@ body {
 					if (i == b.size())
 						break;
 					out.println("<div class=\"col-lg-3 col-md-6 col-sm-12\">");
-					out.println("<p>" + b.get(i).getProductName() + "</p>");
-					out.println("<p>" + b.get(i).getDescription() + "</p>");
+					out.println("<div class=\"card\">");
+					out.println("<div class=\"card-body\">");
 					if(b.get(i).getImage() != null) {
-						out.println("<p>" + "theres something" + "</p>");
 						out.println("<img src=\"/image/"+ b.get(i).getImage().getKeyAsString() +"\">");
 					}
-					else {
-						out.println("<p>" + "theres nothing" + "</p>");
-					}
-					out.println("<p>" + b.get(i).getValue() + "</p>");
+					out.println("<div class=\"ctn\">");
+					out.println("<div class=\"ctn-child\">");
+					out.println("<p>" + b.get(i).getProductName() + "</p>");
+					out.println("<p class=\"pdesc\">" + b.get(i).getDescription() + "</p>");
+					out.println("<p>" + b.get(i).getValue() + "円</p>");
+					out.println("</div>");
+					out.println("</div>");
+					out.println("</div>");
+					out.println("</div>");
 					out.println("</div>");
 				}
 				out.println("</div>");
